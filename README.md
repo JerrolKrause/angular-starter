@@ -32,19 +32,20 @@ ng serve
 # Serve dev on http://localhost:4200/ with hot module reloading
 npm run start
 
-# Prod Build for targeted environment. Files will appear in the dist folder
-npm run build:qa # Uses settings from environment.qa.ts
-npm run build:uat # Uses settings from environment.uat.ts
-npm run build:prod # Uses settings from environment.prod.ts
+# Production Build for targeted environment. Files will appear in the dist folder
+npm run build:integration # Uses settings from environment.integration.ts
+npm run build:test # Uses settings from environment.test.ts
+npm run build:production # Uses settings from environment.production.ts
+npm run build:staging # Uses settings from environment.staging.ts
 
-# Serve prod build from dist folder at http://127.0.0.1:8080/#/.
+# Serve production build from dist folder at http://127.0.0.1:8080/#/.
 # Requires http server which can be installed with `npm install http-server -g`
-npm run prod
+npm run production
 
 # Run prettier which will format the code in the entire project. It is better to use the prettier extension which formats on save.
 npm run format
 
-# Run prod build and then use webpack bundle analyzer to check bundle sizes and composition
+# Run production build and then use webpack bundle analyzer to check bundle sizes and composition
 # Documentation located in /documentation/
 npm run build:stats
 
@@ -70,8 +71,8 @@ npm run deploy
 
 # Angular Universal/SSR Commands
 npm run ssr:dev # Run SSR locally for development purposes
-npm run ssr:build # Create an SSR prod build
-npm run ssr:serve # Serve SSR prod build with express. This is the command needed to run on the server.
+npm run ssr:build # Create an SSR production build
+npm run ssr:serve # Serve SSR production build with express. This is the command needed to run on the server.
 
 ```
 
@@ -82,7 +83,7 @@ npm run ssr:serve # Serve SSR prod build with express. This is the command neede
 - If using github pages, update the `npm run deploy` command in this file to include the correct slug. IE replace `/angular-starter/` with your url
 
 `src > environments > defaults.ts` +
-`src > environments > environment.prod.ts`
+`src > environments > environment.production.ts`
 
 - Localize environment settings and properties in these files. Enable/disable app functionality as needed
 

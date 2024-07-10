@@ -43,7 +43,7 @@
               "sourceMap": true,
               "namedChunks": true
             },
-            "qa": {
+            "integration": {
               "budgets": [
                 {
                   "type": "anyComponentStyle",
@@ -63,11 +63,11 @@
               "fileReplacements": [
                 {
                   "replace": "./src/environments/environment.ts",
-                  "with": "./src/environments/environment.qa.ts"
+                  "with": "./src/environments/environment.integration.ts"
                 }
               ]
             },
-            "uat": {
+            "test": {
               "budgets": [
                 {
                   "type": "anyComponentStyle",
@@ -87,7 +87,7 @@
               "fileReplacements": [
                 {
                   "replace": "./src/environments/environment.ts",
-                  "with": "./src/environments/environment.uat.ts"
+                  "with": "./src/environments/environment.test.ts"
                 }
               ]
             },
@@ -111,7 +111,31 @@
               "fileReplacements": [
                 {
                   "replace": "./src/environments/environment.ts",
-                  "with": "./src/environments/environment.prod.ts"
+                  "with": "./src/environments/environment.production.ts"
+                }
+              ]
+            },
+            "staging": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true,
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json",
+              "fileReplacements": [
+                {
+                  "replace": "./src/environments/environment.ts",
+                  "with": "./src/environments/environment.staging.ts"
                 }
               ]
             }
