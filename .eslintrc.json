@@ -1,16 +1,21 @@
 {
-  "extends": ["tslint-angular"],
-  "ignorePatterns": ["!**/*"],
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
   "overrides": [
     {
       "files": ["*.ts"],
-      "extends": ["plugin:@angular-eslint/template/process-inline-templates"],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
           {
             "type": "attribute",
-            "prefix": "nts",
+            "prefix": "app",
             "style": "camelCase"
           }
         ],
@@ -18,10 +23,20 @@
           "error",
           {
             "type": "element",
-            "prefix": "nts",
+            "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@angular-eslint/no-empty-lifecycle-method": "warn",
+        "@typescript-eslint/no-explicit-any": "warn"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended", "plugin:@angular-eslint/template/accessibility"],
+      "rules": {
+        "@angular-eslint/template/click-events-have-key-events": "warn",
+        "@angular-eslint/template/interactive-supports-focus": "warn"
       }
     }
   ]
