@@ -140,10 +140,9 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": ["./tsconfig.app.json", "./tsconfig.spec.json", "cypress/tsconfig.json"],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         },
         "test": {
@@ -355,6 +354,6 @@
   },
   "cli": {
     "analytics": false,
-    "schematicCollections": ["@ntersol/schematics", "@schematics/angular"]
+    "schematicCollections": ["@ntersol/schematics", "@schematics/angular", "@angular-eslint/schematics"]
   }
 }
